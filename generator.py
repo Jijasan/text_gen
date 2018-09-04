@@ -6,7 +6,7 @@ import re
 
 of = open("output.txt", 'w')
 s = ''
-for i in range(100):
+for i in range(1000):
     a = []
     f = open('data/' + s + '.txt', 'r')
     s3 = f.read()
@@ -15,6 +15,9 @@ for i in range(100):
     for s1 in b:
         a.append(s1)
         print(s1)
+    if len(a)==0:
+        s = ""
+        continue
     it = random.randint(0, len(a)-1)
     of.write(a[it]+' ')
     s = a[it]
